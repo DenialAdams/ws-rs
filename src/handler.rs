@@ -317,7 +317,7 @@ pub trait Handler {
             Kind::Protocol,
             format!("Unable to parse domain from {}. Needed for SSL.", url),
         ))?;
-        let connector = TlsConnector::builder().and_then(|builder| builder.build())
+        let connector = TlsConnector::builder().build()
             .map_err(|e| {
                 Error::new(
                     Kind::Internal,
